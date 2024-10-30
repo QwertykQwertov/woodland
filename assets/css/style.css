@@ -24,13 +24,14 @@ body {
   align-items: center;
 }
 
-.welcome-title 
-{
+.welcome-title {
   font-size: 52px;
   color: #d1d1d1;
 }
 
-.about {
+.about,
+.materials,
+.slider {
   background-color: #212529;
   color: #d1d1d1;
 }
@@ -40,10 +41,32 @@ body {
   color: #d1d1d1;
 }
 
-.advantages-overlay {
+.advantages-overlay,
+.individual-overlay {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.material-cards-wrapper {
+  flex-wrap: wrap;
+}
+
+.material-card {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.material-card>img {
+  width: 100%;
+  height: 100%;
+}
+
+.individual {
+  background-image: url('../images/78.jpg');
+  color: #d1d1d1;
 }
 
 @media (min-width: 992px) {
