@@ -4,6 +4,16 @@ body {
   flex-direction: column;
 }
 
+.ki-nav-phone-link {
+  color: #ffffff8c;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.ki-nav-phone-link:hover {
+  color: #ffffffbf;
+}
+
 .welcome {
   width: 100%;
   height: 70vh;
@@ -73,4 +83,20 @@ body {
   .ki-navbar {
     height: 100px;
   }
+}
+
+
+
+/* Позиционирование подменю сбоку */
+.dropdown-submenu .dropdown-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+/* Стилизация состояний наведения и фокуса */
+.dropdown-submenu:hover>.dropdown-menu,
+.dropdown-submenu:focus>.dropdown-menu {
+  display: block;
 }

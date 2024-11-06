@@ -5,22 +5,57 @@ $keywords = 'ПВХ сэндвич-панели, оргстекло литое, 
 
 include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
 
-$dir = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/slider';
+$dir = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/slider_min';
 
 
 $slider_data = array_values(array_diff(scandir($dir), array('..', '.')));
 ?>
+<!-- Slider -->
+<section class="slider">
+  <div style="flex:1;">
+    <div class="row m-0">
+      <div id="carouselExampleAutoplaying" class="carousel slide p-0" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-indicators">
+          <? foreach ($slider_data as $key => $item) { ?>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="<?= $key ?>" aria-label="Слайд <?= $key ?>" class="<? if ($key == 0) echo 'active' ?>" aria-current="<?= $key == 0 ?>"></button>
+          <? } ?>
+        </div>
+        <div class="carousel-inner" role="listbox">
 
+          <? foreach ($slider_data as $key => $item) {
+          ?>
+            <div class="carousel-item <? if ($key == 0) echo 'active' ?>">
+              <div class="card" style="border: none;">
+                <div class="card-img">
+                  <img src="/assets/images/slider/<?= $item ?>" class="img-fluid" alt="<?= $item ?>" style="width: 100%; max-height: 70vh;">
+                </div>
+              </div>
+            </div>
+          <? } ?>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Следующий</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END slider -->
 <!-- Welcome -->
-<div class="welcome">
+<!-- <div class="welcome">
   <div class="welcome-overlay">
     <h1 class="welcome-title">Изделия из дерева любой сложности</h2>
   </div>
-</div>
+</div> -->
 <!-- END welcome -->
 
 <!-- О компании -->
-<section class="about">
+<section class="about" id="about">
   <div class="container">
     <!-- <hr class="ki-custom-hr"> -->
     <div class='about-wrapper d-flex gap-5 my-5 align-items-center'>
@@ -29,14 +64,9 @@ $slider_data = array_values(array_diff(scandir($dir), array('..', '.')));
       </div> -->
       <div class="about-text-wrapper my-5">
         <h2 class="text-center mb-5 fs-1">Немного о нас</h2>
-        <p style="text-align: justify; line-height: 1.8; font-size: 1.2em; text-indent: 20px;">Представляем вам компанию <strong>"Дерево Мастер"</strong> - ведущего производителя высококачественных деревянных изделий на заказ. Наша команда профессионалов с многолетним опытом работы создает уникальные предметы мебели, декора и других деревянных конструкций по индивидуальным чертежам и фотографиям клиента.</p>
-
-        <p style="text-align: justify; line-height: 1.8; font-size: 1.2em; text-indent: 20px;">Мы гордимся тем, что используем только экологически чистые материалы, тщательно отбирая лучшую древесину от надежных поставщиков. Каждое изделие изготавливается с особой тщательностью и вниманием к деталям, чтобы воплотить в жизнь ваши самые смелые идеи.</p>
-
-        <p style="text-align: justify; line-height: 1.8; font-size: 1.2em; text-indent: 20px;">Наши мастера обладают высочайшей квалификацией и творческим подходом, что позволяет им создавать настоящие произведения искусства из дерева. Будь то элегантная мебель для дома, эксклюзивные предметы интерьера или уникальные декоративные элементы - мы воплощаем в реальность любые ваши пожелания.</p>
-
-        <p style="text-align: justify; line-height: 1.8; font-size: 1.2em; text-indent: 20px;">Компания <strong>"Дерево Мастер"</strong> гарантирует высокое качество, надежность и долговечность всех наших изделий. Мы дорожим доверием наших клиентов и всегда стремимся превзойти их ожидания, предлагая индивидуальный подход и безупречный сервис на каждом этапе сотрудничества.</p>
-
+        <p style="text-align: justify; line-height: 1.8; font-size: 1.2em; text-indent: 20px;">Мастерская «Древопласт» — это столярная мастерская, специализирующаяся на производстве изделий из дерева и пластика. Мы создаем товары как для дома, так и для бизнеса, придерживаясь принципов минимализма, эстетики и практичности.</p>
+        <p style="text-align: justify; line-height: 1.8; font-size: 1.2em; text-indent: 20px;">Каждый заказ мы рассматриваем индивидуально и разрабатываем соответствующие чертежи. Кроме того, на наших изделиях мы можем выполнить гравировку вашего логотипа или любой надписи. Каждое изделие изготавливается с особой тщательностью и вниманием к деталям, воплощая в жизнь ваши самые смелые идеи. Все наши товары обработаны маслом или воском для долговечности и защиты.</p>
+        <p style="text-align: justify; line-height: 1.8; font-size: 1.2em; text-indent: 20px;">Мы — команда молодых и энергичных специалистов c творческим подходом, что позволяет нам создавать настоящие произведения искусства из дерева. Мы дорожим доверием наших клиентов и всегда стремимся превзойти их ожидания и будем рады сотрудничеству с каждым, кто к нам обращается!</p>
         <p style="text-align: justify; line-height: 1.8; font-size: 1.2em; text-indent: 20px;">Обратившись к нам, вы получите не просто деревянные изделия, а эксклюзивные предметы, которые станут украшением вашего дома или офиса и будут радовать вас долгие годы. Позвольте нам воплотить в жизнь ваши творческие замыслы!</p>
       </div>
     </div>
@@ -196,7 +226,7 @@ $slider_data = array_values(array_diff(scandir($dir), array('..', '.')));
   <div class="individual-overlay">
     <div class="container py-5">
       <div class="py-5">
-        <h2 class="text-center mb-5 fs-1">Деревянные изделия по индивидельному заказу</h2>
+        <h2 class="text-center mb-5 fs-1">Деревянные изделия по индивидуальному заказу</h2>
         <p style="text-align: justify; line-height: 1.2; font-size: 1.5em; text-indent: 20px;">Мы предлагаем полный цикл изготовления продукции - от проработки технической документации до финальной реализации проекта. Благодаря современному оборудованию и опытным специалистам, мы гарантируем высокую точность исполнения и соответствие всем заданным параметрам.</p>
         <p style="text-align: justify; line-height: 1.2; font-size: 1.5em; text-indent: 20px;">Каждый проект для нас уникален, и мы уделяем особое внимание требованиям и пожеланиям клиента. Наши технологи готовы проконсультировать по всем техническим вопросам и предложить оптимальные решения для вашей задачи. Мы обеспечиваем строгий контроль качества на всех этапах производства и соблюдаем согласованные сроки изготовления.</p>
         <p style="text-align: justify; line-height: 1.2; font-size: 1.5em; text-indent: 20px;"> Доверьте реализацию ваших проектов профессионалам - мы воплотим в жизнь изделия любой сложности по вашим чертежам!</p>
@@ -209,40 +239,4 @@ $slider_data = array_values(array_diff(scandir($dir), array('..', '.')));
 </section>
 <!-- END По индивидуальному заказу -->
 
-<!-- Slider -->
-<section class="slider">
-  <div class="container py-5" style="flex:1;">
-    <div class="row m-0">
-      <div id="carouselExampleAutoplaying" class="carousel slide p-0" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-indicators">
-          <? foreach ($slider_data as $key => $item) { ?>
-            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="<?= $key ?>" aria-label="Слайд <?= $key ?>" class="<? if ($key == 0) echo 'active' ?>" aria-current="<?= $key == 0 ?>"></button>
-          <? } ?>
-        </div>
-        <div class="carousel-inner" role="listbox">
-
-          <? foreach ($slider_data as $key => $item) {
-          ?>
-            <div class="carousel-item <? if ($key == 0) echo 'active' ?>">
-              <div class="card" style="border: none;">
-                <div class="card-img">
-                  <img src="/assets/images/slider/<?= $item ?>" class="img-fluid" alt="<?= $item ?>" style="width: 100%; max-height: 70vh;">
-                </div>
-              </div>
-            </div>
-          <? } ?>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Предыдущий</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Следующий</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- END slider -->
 <? include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/footer.php"; ?>
