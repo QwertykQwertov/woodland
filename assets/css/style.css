@@ -161,6 +161,12 @@ body {
   flex-direction: column;
   max-width: 360px;
   padding: 10px;
+  transition: all .3s;
+}
+
+.ki-product-card:hover {
+  scale: 1.01;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
 .ki-card-image-wrapper {

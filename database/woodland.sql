@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 07 2024 г., 23:36
+-- Время создания: Ноя 09 2024 г., 18:06
 -- Версия сервера: 10.3.34-MariaDB
 -- Версия PHP: 7.4.29
 
@@ -53,6 +53,39 @@ INSERT INTO `categories` (`id`, `name`, `image`, `description`, `category_link`,
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `products_tables`
+--
+
+CREATE TABLE `products_tables` (
+  `id` int(10) NOT NULL,
+  `article` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_description` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Краткое описание',
+  `full_description` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Полное описание',
+  `category` int(5) NOT NULL,
+  `subcategory` int(5) DEFAULT NULL,
+  `image` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` float NOT NULL,
+  `opt_price` float NOT NULL,
+  `length` int(10) NOT NULL COMMENT 'Длина',
+  `height` int(10) NOT NULL COMMENT 'Высота',
+  `width` int(10) NOT NULL COMMENT 'Ширина',
+  `weight` float NOT NULL COMMENT 'Вес',
+  `color` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `products_tables`
+--
+
+INSERT INTO `products_tables` (`id`, `article`, `name`, `short_description`, `full_description`, `category`, `subcategory`, `image`, `price`, `opt_price`, `length`, `height`, `width`, `weight`, `color`) VALUES
+(1, '', 'Журнальный столик 1', 'Журнальный столик в стиле лофт идеально впишется в ваш интерьер', '', 1, 4, 'journal1.jpg', 9999, 123, 50, 70, 30, 3, ''),
+(2, '', 'Журнальный столик 2', 'Красивый журнальный столик для вашего интерьера', '', 1, 4, 'journal2.jpg\r\n', 4999, 123, 50, 60, 50, 3.4, ''),
+(3, '', 'Журнальный столик 3', 'Круглый журнальный столик понравится ценителям минимализма', '', 1, 4, 'journal3.jpg\r\n', 5999, 123, 90, 70, 90, 5, '');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `subcategories`
 --
 
@@ -96,6 +129,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `products_tables`
+--
+ALTER TABLE `products_tables`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `subcategories`
 --
 ALTER TABLE `subcategories`
@@ -110,6 +149,12 @@ ALTER TABLE `subcategories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT для таблицы `products_tables`
+--
+ALTER TABLE `products_tables`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `subcategories`
