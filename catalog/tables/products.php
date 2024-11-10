@@ -28,18 +28,20 @@ if ($result->num_rows != 0) {
 
     <?php foreach ($products as $product): ?>
       <div class="ki-product-card text-center">
-        <div class="ki-card-image-wrapper">
-          <img class="ki-card-image" src=<?= '/assets/images/catalog/tables/' . $product['image'] ?> alt=<?= $product['name'] ?>>
-        </div>
-        <div class="ki-card-description d-flex flex-column mt-2">
-          <p class="ki-card-title h5"><?= $product['name'] ?></p>
-          <p class="ki-card-text"><?= $product['short_description'] ?></p>
-          <p class="ki-card-price h4"><?= number_format($product['price'], 0, '.', ' ') . '₽'; ?></p>
-        </div>
-        <div class="ki-card-footer">
-          <hr>
-          <button type="button" class="btn btn-outline-dark">В корзину</button>
-        </div>
+        <a href="<?= '/catalog/tables/product?id=' . $product['id'] ?>" style="text-decoration: none; color: var(--bs-body-color);">
+          <div class="ki-card-image-wrapper">
+            <img class="ki-card-image" src=<?= '/assets/images/catalog/tables/' . $product['image'] ?> alt=<?= $product['name'] ?>>
+          </div>
+          <div class="ki-card-description d-flex flex-column mt-2">
+            <p class="ki-card-title h5"><?= $product['name'] ?></p>
+            <p class="ki-card-text"><?= $product['short_description'] ?></p>
+            <p class="ki-card-price h4"><?= number_format($product['price'], 0, '.', ' ') . '₽'; ?></p>
+          </div>
+          <div class="ki-card-footer">
+            <hr>
+            <button type="button" class="btn btn-outline-dark" onclick="onBtnClick(event, <?= $product['id'] ?>)">В корзину</button>
+          </div>
+        </a>
       </div>
     <?php endforeach; ?>
 
@@ -48,3 +50,10 @@ if ($result->num_rows != 0) {
 </div>
 
 <? include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/footer.php"; ?>
+
+<script>
+  function onBtnClick(e, id) {
+    e.preventDefault()
+    console.log(e, id)
+  }
+</script>

@@ -91,7 +91,7 @@ if (!isset($page)) {
               <a class="nav-link <? if ($page === 'contacts') echo 'active' ?>" aria-current="page" href="/contacts/">Контакты</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#about">О нас</a>
+              <a class="nav-link" aria-current="page" href="/#about">О нас</a>
             </li>
           </ul>
           <div class="d-flex align-items-center" style="gap: 10px">

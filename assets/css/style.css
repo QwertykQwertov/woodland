@@ -185,3 +185,45 @@ body {
 .ki-card-text {
   flex: 1;
 }
+
+.product-page {
+  background-image: url('../images/88981.jpg');
+  /* background-image: url('../images/78.jpg'); */
+  color: #d1d1d1;
+}
+
+.product-page-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.product-image-wrapper {
+  width: 40%;
+}
+
+.product-text-wrapper {
+  width: 60%
+}
+
+
+
+/* Контакты */
+.page-contacts {
+  padding: 0;
+  background-image: url('../images/78.jpg');
+  /* background-image: url('../images/78.jpg'); */
+  color: #d1d1d1;
+}
+
+.contacts-list {
+  list-style: none;
+  font-size: 1.25em;
+  line-height: 45px;
+}
+
+.contacts-list>li>a {
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #d1d1d1;
+}
