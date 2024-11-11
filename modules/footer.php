@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5">
       <div class="col mb-3">
-        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none text-light">
+        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none text-light ki-footer-link">
           <h5>Древопласт</h5>
         </a>
         <p class="text-light">© 2024</p>
@@ -11,14 +11,14 @@
       <div class="col mb-3"></div>
       <div class="col mb-3"></div>
       <div class="col mb-3">
-        <a href="/contacts" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none text-light">
+        <a href="/contacts" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none text-light ki-footer-link">
           <h5>Контакты</h5>
         </a>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">МО, г.Истра, д.Черная, улица Солнечная, дом 11</a></li>
-          <li class="nav-item mb-2"><a href="tel:+79637194406" class="nav-link p-0 text-light">+7 (963) 719-44-06 </a></li>
-          <li class="nav-item mb-2"><a href="/contacts/" class="nav-link p-0 text-light">val.zelinskaya@gmail.com</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Время работы:
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light ki-footer-link">МО, г.Истра, д.Черная, улица Солнечная, дом 11</a></li>
+          <li class="nav-item mb-2"><a href="tel:+79637194406" class="nav-link p-0 text-light ki-footer-link">+7 (963) 719-44-06 </a></li>
+          <li class="nav-item mb-2"><a href="/contacts/" class="nav-link p-0 text-light ki-footer-link">val.zelinskaya@gmail.com</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light ki-footer-link">Время работы:
               пн-пт 9.00-18.00, сб, вс Выходной</a></li>
         </ul>
       </div>
@@ -26,8 +26,8 @@
       <div class="col mb-3">
         <h5>Покупателям</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="/catalog/" class="nav-link p-0 text-light">Товары</a></li>
-          <li class="nav-item mb-2"><a href="/services/" class="nav-link p-0 text-light">Услуги</a></li>
+          <li class="nav-item mb-2"><a href="/catalog/" class="nav-link p-0 text-light ki-footer-link">Товары</a></li>
+          <li class="nav-item mb-2"><a href="/services/" class="nav-link p-0 text-light ki-footer-link">Услуги</a></li>
         </ul>
       </div>
 

@@ -27,7 +27,7 @@ $slider_data = array_values(array_diff(scandir($dir), array('..', '.')));
             <div class="carousel-item <? if ($key == 0) echo 'active' ?>">
               <div class="card" style="border: none;">
                 <div class="card-img">
-                  <img src="/assets/images/slider/<?= $item ?>" class="img-fluid" alt="<?= $item ?>" style="width: 100%; max-height: 70vh;">
+                  <img src="/assets/images/slider_min/<?= $item ?>" class="img-fluid" alt="<?= $item ?>" style="width: 100%; max-height: 70vh;">
                 </div>
               </div>
             </div>
