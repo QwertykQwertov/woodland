@@ -36,6 +36,34 @@
   </div>
 </footer>
 
+<!-- Modal -->
+<div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-end">
+        <button style="background: transparent; border: none" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="h4">×</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-center align-items-center">
+        <img style="margin: 0-auto; max-width: 100%; max-height: 100%" id="modalImage" src="" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Открытие модального окна на странице услуг
+  function onImageClick(e) {
+    if (e.target.classList.contains('ki-special-image-wrapper')) {
+      modalImage.src = e.target.children[0].currentSrc
+    } else if (e.target.nodeName === 'IMG') {
+      modalImage.src = e.target.currentSrc
+    } else {
+      e.stopPropagation()
+    }
+  }
+</script>
 <script src="/assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

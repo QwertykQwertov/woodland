@@ -24,40 +24,57 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
           Глубина и четкость гравировки позволяют получить эффектные изделия с проработкой мельчайших деталей.
           Гравировка на оргстекле открывает широкие возможности для создания эффектных вывесок, указателей, наградных плакеток и бизнес-сувениров.
           Прозрачность материала в сочетании с гравировкой создает потрясающий визуальный эффект.
-          Мы гарантируем высокое качество работ и точное соответствие вашему дизайн-проекту.
-          Опытные специалисты "Древопласт" помогут воплотить в жизнь любые ваши идеи, от простых надписей до сложных художественных композиций.
+          <br>Наши возможности включают:
+        <ul>
+          <li>Нанесение корпоративных логотипов</li>
+          <li>Создание именных табличек и указателей</li>
+          <li>Брендирование сувенирной продукции</li>
+          <li>Изготовление информационных вывесок</li>
+        </ul>
+        Мы гарантируем высокую точность воспроизведения любых шрифтов и изображений, включая самые мелкие детали.
+        Работаем как с единичными заказами, так и с крупными партиями брендированной продукции.
+        Доверьте нанесение вашего логотипа профессионалам "Древопласт"!
+        Мы обеспечим качественное исполнение и точное соответствие фирменному стилю вашей компании.
         </p>
       </div>
     </div>
-    <div class="ki-special-image-wrapper p-3" style="width: 40%">
+    <div class="p-3" style="width: 40%">
       <img style="max-width: 100%;" src="/assets/images/services/engraving7.jpg " alt="">
     </div>
 
   </div>
   <hr>
-  <div class="d-flex py-5" style="flex-wrap: wrap;">
-    <div class="ki-special-image-wrapper p-3" style="width: 25%">
+  <div class="d-flex py-5" style="flex-wrap: wrap;" onclick="onImageClick(event)">
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving1.jpg" alt="">
-    </div>
-    <div class="ki-special-image-wrapper p-3" style="width: 25%">
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving6.jpg" alt="">
-    </div>
-    <div class="ki-special-image-wrapper p-3" style="width: 25%">
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving2.jpg" alt="">
-    </div>
-    <div class="ki-special-image-wrapper p-3" style="width: 25%">
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving5.jpg" alt="">
-    </div>
-    <div class="ki-special-image-wrapper p-3" style="width: 25%">
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving3.jpg" alt="">
-    </div>
-    <div class="ki-special-image-wrapper p-3" style="width: 25%">
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving4.jpg" alt="">
-    </div>
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+      <img style="max-width: 100%;" src="/assets/images/services/engraving8.jpg" alt="">
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+      <img style="max-width: 100%;" src="/assets/images/services/engraving9.jpg" alt="">
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+      <img style="max-width: 100%;" src="/assets/images/services/engraving10.jpg" alt="">
+    </button>
 
   </div>
 
 </div>
-
 
 <? include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/footer.php"; ?>

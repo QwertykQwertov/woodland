@@ -84,7 +84,6 @@ if (!isset($page)) {
                 <li><a class="dropdown-item" href="/services/cnc_wood">Резка ЧПУ по дереву</a></li>
                 <li><a class="dropdown-item" href="/services/cnc_plast">Резка ЧПУ по пластику</a></li>
                 <li><a class="dropdown-item" href="/services/engraving">Гравировка по дереву и оргстеклу</a></li>
-                <li><a class="dropdown-item" href="/services/application">Нанесение на изделия логотипов и слов</a></li>
               </ul>
             </li>
             <li class="nav-item">

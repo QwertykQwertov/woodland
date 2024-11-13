@@ -39,19 +39,19 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
     </div>
   </div>
   <hr>
-  <div class="d-flex py-5" style="flex-wrap: wrap;">
-    <div class="ki-special-image-wrapper p-3" style="width: 25%">
+  <div class="d-flex py-5" style="flex-wrap: wrap;" onclick="onImageClick(event)">
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%; width: 292px; height: 292px;" src="/assets/images/services/cnc_wood1.jpg" alt="">
-    </div>
-    <div class="ki-special-image-wrapper p-3" style="width: 25%">
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%; width: 292px; height: 292px;" src="/assets/images/services/cnc_wood2.jpg" alt="">
-    </div>
-    <div class="ki-special-image-wrapper p-3" style="width: 25%">
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%; width: 292px; height: 292px;" src="/assets/images/services/cnc_wood3.jpg" alt="">
-    </div>
-    <div class="ki-special-image-wrapper p-3" style="width: 25%">
+    </button>
+    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%; width: 292px; height: 292px;" src="/assets/images/services/cnc_wood4.jpg" alt="">
-    </div>
+    </button>
 
   </div>
 

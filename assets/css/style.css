@@ -208,6 +208,18 @@ body {
 }
 
 
+/* Услуги */
+
+button.ki-special-image-wrapper {
+  width: 25%;
+  background: transparent;
+  border: none
+}
+
+button.ki-special-image-wrapper:hover {
+  transform: scale(1.01);
+}
+
 
 /* Контакты */
 .page-contacts {
