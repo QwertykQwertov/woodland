@@ -45,31 +45,31 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
   </div>
   <hr>
   <div class="d-flex py-5" style="flex-wrap: wrap;" onclick="onImageClick(event)">
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving1.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving6.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving2.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving5.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving3.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving4.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving8.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving9.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/engraving10.jpg" alt="">
     </button>
 

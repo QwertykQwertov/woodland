@@ -40,16 +40,16 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
   </div>
   <hr>
   <div class="d-flex py-5" style="flex-wrap: wrap;" onclick="onImageClick(event)">
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%; width: 292px; height: 292px;" src="/assets/images/services/cnc_wood1.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%; width: 292px; height: 292px;" src="/assets/images/services/cnc_wood2.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%; width: 292px; height: 292px;" src="/assets/images/services/cnc_wood3.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%; width: 292px; height: 292px;" src="/assets/images/services/cnc_wood4.jpg" alt="">
     </button>
 

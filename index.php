@@ -189,7 +189,7 @@ $slider_data = array_values(array_diff(scandir($dir), array('..', '.')));
         </p>
       </div>
 
-      <div class="material-cards-wrapper d-flex justify-content-between gap-5">
+      <div class="material-cards-wrapper d-flex justify-content-between">
         <div class="material-card">
           <img src="./assets/images/materials/buk.jpg" alt="">
         </div>

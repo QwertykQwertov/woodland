@@ -34,16 +34,16 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
   </div>
   <hr>
   <div class="d-flex py-5" onclick="onImageClick(event)">
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/cnc_plast1.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/cnc_plast2_cut.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/cnc_plast3_cut.jpg" alt="">
     </button>
-    <button class="ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
+    <button class="ki-modal-trigger ki-special-image-wrapper p-3" data-toggle="modal" data-target="#modalCenter">
       <img style="max-width: 100%;" src="/assets/images/services/cnc_plast4.jpg" alt="">
     </button>
 

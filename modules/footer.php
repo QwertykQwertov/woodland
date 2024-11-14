@@ -15,7 +15,7 @@
           <h5>Контакты</h5>
         </a>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light ki-footer-link">МО, г.Истра, д.Черная, улица Солнечная, дом 11</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light ki-footer-link">МО, г.Истра, д.Черная</a></li>
           <li class="nav-item mb-2"><a href="tel:+79637194406" class="nav-link p-0 text-light ki-footer-link">+7 (963) 719-44-06 </a></li>
           <li class="nav-item mb-2"><a href="/contacts/" class="nav-link p-0 text-light ki-footer-link">val.zelinskaya@gmail.com</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light ki-footer-link">Время работы:
@@ -55,7 +55,7 @@
 <script>
   // Открытие модального окна на странице услуг
   function onImageClick(e) {
-    if (e.target.classList.contains('ki-special-image-wrapper')) {
+    if (e.target.classList.contains('ki-modal-trigger')) {
       modalImage.src = e.target.children[0].currentSrc
     } else if (e.target.nodeName === 'IMG') {
       modalImage.src = e.target.currentSrc
