@@ -39,7 +39,7 @@ if ($result->num_rows != 0) {
           </div>
           <div class="ki-card-footer">
             <hr>
-            <button type="button" class="btn btn-outline-dark" onclick="onBtnClick(event, <?= $product['id'] ?>)">В корзину</button>
+            <button type="button" class="btn btn-outline-dark" onclick="onBtnClick(event, <?= $product['id'] ?>, '<?= $product['name'] ?>' , '<?= $product['article'] ?>' )">В корзину</button>
           </div>
         </a>
       </div>
@@ -52,8 +52,36 @@ if ($result->num_rows != 0) {
 <? include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/footer.php"; ?>
 
 <script>
-  function onBtnClick(e, id) {
+  function onBtnClick(e, id, name, article) {
     e.preventDefault()
-    console.log(e, id)
+
+    addToCart(id, name, article)
+
+    toastBody.innerHTML = `Добавлено в корзину: <b>"${name}"</b>`
+
+    const toast = new bootstrap.Toast(toastDiv)
+    toast.show()
+  }
+
+  function addToCart(id, name, article) {
+    let link = window.location.pathname.slice(0, -1) + '?id=' + id
+    let cart = localStorage.getItem('cart')
+    cart = cart ? JSON.parse(cart) : []
+
+    let product = cart.find(el => el.id === id)
+
+    if (product) {
+      product.amount++
+    } else {
+      cart.push({
+        id,
+        name,
+        amount: 1,
+        link,
+        article
+      })
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart))
   }
 </script>
