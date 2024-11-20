@@ -12,17 +12,22 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
   <table class="table table-striped" id="cartTable">
     <thead>
       <tr>
-        <th scope="col" width="10%">№</th>
-        <th scope="col" width="50%">Наименование</th>
-        <th scope="col" width="10%">Количество</th>
-        <th scope="col" width="30%"></th>
+        <th scope="col" width="4%" style="text-align: center;">№</th>
+        <th scope="col" width="56%">Наименование</th>
+        <th scope="col" width="10%" style="text-align: center;">Цена</th>
+        <th scope="col" width="10%" style="text-align: center;">Количество</th>
+        <th scope="col" width="20%"></th>
       </tr>
     </thead>
     <tbody id="cartBody">
     </tbody>
   </table>
-  <div id="empty" class="d-none justify-content-center align-items-center" style="flex:1; color: #9b9d9e;">
-    <h3>Корзина пуста</h3>
+  <div class="total-wrapper">
+    <p class="total h5"></p>
+  </div>
+  <div id="empty" class="d-none flex-column justify-content-center align-items-center" style="flex:1; color: #9b9d9e;">
+    <h3 class="mb-4">Корзина пуста</h3>
+    <a href="/catalog" class="btn btn-outline-dark" type="button">К покупкам</a>
   </div>
 
   <div id="btnWrapper" class="d-grid">
@@ -32,7 +37,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
 
 
   <!-- Modal -->
-  <div class="modal fade" id="modalOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="modalOrder" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-between">
@@ -42,21 +47,27 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
           </button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="mb-2">
+              <label for="name" class="form-label">Имя</label>
+              <input type="text" class="form-control" id="name" required>
+              <div class="invalid-feedback">Пожалуйста, введите имя</div>
             </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+            <div class="mb-2">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">Пожалуйста, введите корректный Email</div>
             </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <div class="mb-2">
+              <label for="phone" class="form-label">Телефон</label>
+              <input type="phone" class="form-control" id="exampleInputEmail1" required>
+              <div class="invalid-feedback">Пожалуйста, введите номер телефона</div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="mb-2">
+              <span class="input-group-text">Комментарий к заказу</span>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Оформить</button>
           </form>
         </div>
       </div>
@@ -65,4 +76,18 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
 
 </div>
 <script src="/assets/js/cart.js"></script>
+<script>
+  const forms = document.querySelectorAll('.needs-validation');
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+</script>
 <? include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/footer.php"; ?>

@@ -22,7 +22,7 @@ if (!isset($page)) {
   <header>
     <nav class="navbar sticky-top navbar-expand-lg bg-dark ki-navbar" data-bs-theme="dark">
       <div class="container-fluid container">
-        <a class="navbar-brand" href="/"><img src="/assets/images/logo/logo_yellow_wb.svg" alt="Древопласт" style="height: 120px; width: 120px; border-radius: 50%;"></a>
+        <a class="navbar-brand" href="/"><img src="/assets/images/logo/logo_yellow_wb_min.svg" alt="Древопласт" style="height: 120px; width: 120px; border-radius: 50%;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
