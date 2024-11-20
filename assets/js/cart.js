@@ -23,13 +23,15 @@ function showCart() {
     emptyMessage.classList.remove('d-none')
     emptyMessage.classList.add('d-flex')
 
+    totalElement.textContent = ''
+
     return
   }
 
 
 
   cart.forEach((element, i) => {
-    total += element.price
+    total += element.price * element.amount
     cartBodyContent += `<tr id="${element.article}">
         <td data-field="row" scope="row" style="text-align: center;">${i + 1}</td>
         <td data-field="name">${element.name}</td>

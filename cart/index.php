@@ -9,25 +9,28 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
 
 <div class="container my-5 cart-wrapper d-flex flex-column" style="flex: 1;">
   <h2 class="mb-5">Корзина</h2>
-  <table class="table table-striped" id="cartTable">
-    <thead>
-      <tr>
-        <th scope="col" width="4%" style="text-align: center;">№</th>
-        <th scope="col" width="56%">Наименование</th>
-        <th scope="col" width="10%" style="text-align: center;">Цена</th>
-        <th scope="col" width="10%" style="text-align: center;">Количество</th>
-        <th scope="col" width="20%"></th>
-      </tr>
-    </thead>
-    <tbody id="cartBody">
-    </tbody>
-  </table>
-  <div class="total-wrapper">
-    <p class="total h5"></p>
+  <div class="table-wrappper" style="flex: 1">
+    <table class="table table-striped" id="cartTable">
+      <thead>
+        <tr>
+          <th scope="col" width="4%" style="text-align: center;">№</th>
+          <th scope="col" width="56%">Наименование</th>
+          <th scope="col" width="10%" style="text-align: center;">Цена</th>
+          <th scope="col" width="10%" style="text-align: center;">Количество</th>
+          <th scope="col" width="20%"></th>
+        </tr>
+      </thead>
+      <tbody id="cartBody">
+      </tbody>
+    </table>
   </div>
   <div id="empty" class="d-none flex-column justify-content-center align-items-center" style="flex:1; color: #9b9d9e;">
     <h3 class="mb-4">Корзина пуста</h3>
     <a href="/catalog" class="btn btn-outline-dark" type="button">К покупкам</a>
+  </div>
+
+  <div class="total-wrapper">
+    <p class="total h5"></p>
   </div>
 
   <div id="btnWrapper" class="d-grid">

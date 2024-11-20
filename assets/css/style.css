@@ -187,11 +187,17 @@ body {
 }
 
 .ki-product-card {
-  display: flex;
-  flex-direction: column;
   max-width: 360px;
   padding: 10px;
   transition: all .3s;
+}
+
+.ki-product-card-link {
+  text-decoration: none;
+  color: var(--bs-body-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .ki-product-card:hover {
