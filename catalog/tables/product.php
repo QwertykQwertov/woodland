@@ -29,7 +29,7 @@ if ($result->num_rows != 0) {
 <div class="container product-page d-flex flex-column" style="min-height: 80vh; padding: 0;">
   <div class="product-page-overlay d-flex p-5" style="flex:1;" onclick="onImageClick(event)">
     <button class="ki-modal-trigger product-image-wrapper d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#modalCenter">
-      <img src="<?= '/assets/images/catalog/tables/' . $product['image'] ?>" class="img-fluid" style="max-width: 100%; max-height: 100%;" alt="<?= $product['name'] ?>">
+      <img src="<?= '/assets/images/catalog/tables/' . $product['image'] ?>" data-images="<?= $product['other_images'] ?>" class="img-fluid" style="max-width: 100%; max-height: 100%;" alt="<?= $product['name'] ?>">
     </button>
 
     <div class="product-text-wrapper p-3">

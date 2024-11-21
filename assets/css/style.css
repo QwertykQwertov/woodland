@@ -298,6 +298,12 @@ button.ki-special-image-wrapper:hover {
 }
 
 
+.ki-modal-carousel-item-image {
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%
+}
+
 
 /* Footer */
 
