@@ -47,8 +47,6 @@ if ($result->num_rows != 0) {
 
 </div>
 
-<? include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/footer.php"; ?>
-
 <script>
   function onBtnClick(e, id, name, article, price) {
     e.preventDefault()
@@ -84,3 +82,4 @@ if ($result->num_rows != 0) {
     localStorage.setItem('cart', JSON.stringify(cart))
   }
 </script>
+<? include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/footer.php"; ?>

@@ -44,11 +44,47 @@ if ($result->num_rows != 0) {
       <hr>
       <div class="product-footer d-flex justify-content-between align-items-center">
         <p class="h2"><?= number_format($product['price'], 0, '.', ' ') . ' ₽' ?></p>
-        <button type="button" class="btn btn-outline-light btn-lg">В корзину</button>
+        <button type="button" class="btn btn-outline-light btn-lg" onclick="onBtnClick(event, <?= $product['id'] ?>, '<?= $product['name'] ?>' , '<?= $product['article'] ?>', <?= $product['price'] ?> )">В корзину</button>
       </div>
 
     </div>
   </div>
 </div>
+
+<script>
+  function onBtnClick(e, id, name, article, price) {
+    e.preventDefault()
+
+    addToCart(id, name, article, price)
+
+    toastBody.innerHTML = `Добавлено в корзину: <b>"${name}"</b>`
+
+    const toast = new bootstrap.Toast(toastDiv)
+    toast.show()
+  }
+
+  function addToCart(id, name, article, price) {
+    let link = window.location.pathname + '?id=' + id
+    let cart = localStorage.getItem('cart')
+    cart = cart ? JSON.parse(cart) : []
+
+    let product = cart.find(el => el.id === id)
+
+    if (product) {
+      product.amount++
+    } else {
+      cart.push({
+        id,
+        name,
+        amount: 1,
+        link,
+        article,
+        price
+      })
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }
+</script>
 
 <? include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/footer.php"; ?>

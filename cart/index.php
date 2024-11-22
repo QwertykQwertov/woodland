@@ -53,17 +53,17 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
           <form class="row g-3 needs-validation" novalidate>
             <div class="mb-2">
               <label for="name" class="form-label">Имя</label>
-              <input type="text" class="form-control" id="name" required>
+              <input type="text" class="form-control" id="name" name="name" required>
               <div class="invalid-feedback">Пожалуйста, введите имя</div>
             </div>
             <div class="mb-2">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
+              <input type="email" class="form-control" id="email" name="email" required>
               <div class="invalid-feedback">Пожалуйста, введите корректный Email</div>
             </div>
             <div class="mb-2">
               <label for="phone" class="form-label">Телефон</label>
-              <input type="phone" class="form-control" id="exampleInputEmail1" required>
+              <input type="phone" class="form-control" id="phone" required>
               <div class="invalid-feedback">Пожалуйста, введите номер телефона</div>
             </div>
             <div class="mb-2">
@@ -85,12 +85,31 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
   // Loop over them and prevent submission
   Array.prototype.slice.call(forms).forEach((form) => {
     form.addEventListener('submit', (event) => {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
+      event.preventDefault();
+      event.stopPropagation();
+      if (form.checkValidity()) {
+        sendOrder(form)
       }
       form.classList.add('was-validated');
     }, false);
   });
+
+  function sendOrder(form) {
+    const order = {
+      name: form[0].value,
+      email: form[1].value,
+      phone: form[2].value,
+      comment: form[3].value,
+    }
+    console.log(order)
+
+    fetch('/api/order', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(order)
+    }).then(res => res.json()).then(data => console.log())
+  }
 </script>
 <? include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/footer.php"; ?>
