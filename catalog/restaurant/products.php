@@ -1,5 +1,7 @@
 <?
 $title = 'Каталог';
+$description = 'Продажа и изготовление деревянных изделий';
+$keywords = 'Деревянные изделия на заказ, столы лофт, тумбы, деревянные стулья, для ресторанов и кафе, мебель из дерева';
 $page = 'catalog';
 
 include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
@@ -18,6 +20,8 @@ $result = $conn->query($sql);
 
 if ($result->num_rows != 0) {
   $products = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+  $products = [];
 }
 ?>
 

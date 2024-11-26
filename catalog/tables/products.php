@@ -20,6 +20,8 @@ $result = $conn->query($sql);
 
 if ($result->num_rows != 0) {
   $products = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+  $products = [];
 }
 ?>
 
@@ -28,7 +30,7 @@ if ($result->num_rows != 0) {
 
     <?php foreach ($products as $product): ?>
       <div class="ki-product-card text-center">
-        <a href="<?= '/catalog/tables/product?id=' . $product['id'] ?>" class="ki-product-card-link" >
+        <a href="<?= '/catalog/tables/product?id=' . $product['id'] ?>" class="ki-product-card-link">
           <div class="ki-card-image-wrapper">
             <img class="ki-card-image" src=<?= '/assets/images/catalog/tables/' . $product['image'] ?> alt=<?= $product['name'] ?>>
           </div>
