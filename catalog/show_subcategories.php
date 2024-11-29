@@ -1,7 +1,7 @@
 <?
 $title = 'Каталог';
-$description = 'Продажа и резка полимерных материалов';
-$keywords = 'ПВХ сэндвич-панели, оргстекло литое, оргстекло экструзионное, ПВХ лист, клеи и очистители, поликарбонат сотовый, резка полимеров, теплицы ';
+$description = 'Продажа и изготовление деревянных изделий';
+$keywords = 'Деревянные изделия на заказ, столы лофт, тумбы, деревянные стулья, для ресторанов и кафе, мебель из дерева';
 $page = 'catalog';
 
 include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
@@ -23,7 +23,7 @@ if ($result->num_rows != 0) {
     <?php foreach ($subcategories as $subcategory): ?>
       <div class="subcategory-card">
         <a href="<?= '/catalog/' . $folder . '/products?sub=' . $subcategory['id']; ?>">
-          <img class="subcategory-img" src="/assets/images/subcategories/<?= $subcategory['image'];?>" alt="">
+          <img class="subcategory-img" src="/assets/images/subcategories/<?= $subcategory['image']; ?>" alt="">
           <div class="ki-overlay">
             <div class="subcategory-name">
               <p class="h3"><?= $subcategory['name']; ?></p>

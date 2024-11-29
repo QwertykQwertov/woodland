@@ -3,7 +3,6 @@ $title = 'Услуги';
 $description = 'Продажа и изготовление деревянных изделий';
 $keywords = 'Деревянные изделия на заказ, столы лофт, тумбы, деревянные стулья, для ресторанов и кафе, мебель из дерева';
 $page = 'services';
-$page = 'services';
 $services = [
   ["image" => "cnc_wood2.jpg", "name" => "Резка ЧПУ по дереву", "link" => "cnc_wood"],
   ["image" => "cnc_plast1.jpg", "name" => "Резка ЧПУ по пластику", "link" => "cnc_plast"],
