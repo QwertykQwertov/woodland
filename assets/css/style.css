@@ -187,6 +187,7 @@ body {
 }
 
 .ki-product-card {
+  width: 100%;
   max-width: 360px;
   padding: 10px;
   transition: all .3s;
