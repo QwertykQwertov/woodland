@@ -15,7 +15,7 @@ if (!isset($page)) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-navbar-dropdown.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/css/style.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/style.css?1" crossorigin="anonymous">
 </head>
 
 <body>

@@ -58,13 +58,18 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
             </div>
             <div class="mb-2">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" required>
+              <input type="email" class="form-control" id="email" name="email" mask="0-(000)-000-00-00" required>
               <div class="invalid-feedback">Пожалуйста, введите корректный Email</div>
             </div>
             <div class="mb-2">
               <label for="phone" class="form-label">Телефон</label>
               <input type="phone" class="form-control" id="phone" required>
               <div class="invalid-feedback">Пожалуйста, введите номер телефона</div>
+            </div>
+            <div class="mb-2">
+              <span class="input-group-text">Адрес доставки</span>
+              <textarea class="form-control" aria-label="With textarea" required></textarea>
+              <div class="invalid-feedback">Пожалуйста, укажите адрес</div>
             </div>
             <div class="mb-2">
               <span class="input-group-text">Комментарий к заказу</span>
@@ -95,13 +100,21 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
   });
 
   function sendOrder(form) {
+
+    let cart = localStorage.getItem('cart')
+    cart = JSON.parse(cart)
+
+    const total = Number(document.querySelector('.total').textContent.replace(/\D/g, ''))
+
     const order = {
       name: form[0].value,
       email: form[1].value,
       phone: form[2].value,
-      comment: form[3].value,
+      address: form[3].value,
+      comment: form[4].value,
+      order: cart,
+      total
     }
-    console.log(order)
 
     fetch('/api/order', {
       method: 'POST',

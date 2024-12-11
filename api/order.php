@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-function sendMail(array $mail_settings)
+function sendMail(array $mail_settings, $body, $nameTo)
 {
   $mail = new PHPMailer(true);
   try {
@@ -20,12 +20,12 @@ function sendMail(array $mail_settings)
     $mail->Port = $mail_settings['port'];
     $mail->CharSet = $mail_settings['charset'];
 
-    $mail->setFrom($mail_settings['from_email'], $mail_settings['from_name']);
+    $mail->setFrom($mail_settings['from_email'], $nameTo);
 
-    $mail->addAddress('qwertykqwertov@mail.ru');
+    $mail->addAddress('orders@wood-plastic.ru');
     $mail->isHTML($mail_settings['is_html']);
-    $mail->Subject = 'Заказ';
-    $mail->Body = '<h1> Заголовок в письме <h1> <p> И содержание заказа</p>';
+    $mail->Subject = 'Заказ от ' . date('j.m.Y, H:i');
+    $mail->Body = $body;
 
     return $mail->send();
   } catch (Exception $e) {
@@ -33,11 +33,7 @@ function sendMail(array $mail_settings)
   }
 }
 
-sendMail($settings['mail_settings_prod']);
 
-$json = file_get_contents('php://input');
-
-echo $json;
 // if ($_SERVER["REQUEST_METHOD"]) {
 //   echo 'post';
 // } else {
@@ -53,23 +49,40 @@ echo $json;
 // echo file_get_contents("php://input");
 // echo '------23-------------------';
 // var_dump($_POST);
-header('Content-Type: application/json');
+// header('Content-Type: application/json');
 
-// Получаем JSON данные
-$json = file_get_contents('php://input');
-$data = json_decode($json, true);
 
-$response = array();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // echo 'work';
-  // if (isset($data['name'])) {
-  //   $response['status'] = 'success';
-  //   $response['name'] = htmlspecialchars($data['name']);
-  // } else {
-  //   $response['status'] = 'error';
-  //   $response['message'] = 'Name field is missing';
-  // }
+  // Получаем JSON данные
+  $json = file_get_contents('php://input');
+  $data = json_decode($json, true);
+  $nameTo = $data['name'];
 
+  $mailBody = createTable($data);
+
+  sendMail($settings['mail_settings_prod'], $mailBody, $nameTo);
+
+  $response = array();
+  // echo 'work';
+  if (isset($data['name'])) {
+    $response['status'] = 'success';
+    $response['name'] = htmlspecialchars($data['name']);
+  } else {
+    $response['status'] = 'error';
+    $response['message'] = 'Name field is missing';
+  }
+
+  // echo json_encode($json);
   // echo json_encode($response);
+}
+
+function createTable($json)
+{
+  ob_start();
+  // return htmlspecialchars_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/api/mail_template.php"));
+  include "mail_template.php";
+  $content = ob_get_clean();
+
+  return $content;
 }

@@ -4,6 +4,11 @@ body {
   flex-direction: column;
 }
 
+.slider-inner {
+  width: 95%;
+  margin: 0 auto;
+}
+
 .ki-nav-phone-link {
   color: #ffffff8c;
   text-decoration: none;

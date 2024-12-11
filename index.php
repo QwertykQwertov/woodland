@@ -8,39 +8,49 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/header.php";
 $dir = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/slider_min';
 
 
-$slider_data = array_values(array_diff(scandir($dir), array('..', '.')));
+// $slider_data = array_values(array_diff(scandir($dir), array('..', '.')));
+
+$slider_data = [
+  ['img' => 'slide_1.jpg', 'link' => '/catalog/restaurant/products?sub=7', 'alt' => 'Разделочные доски'],
+  ['img' => 'slide_2.jpg', 'link' => '/catalog/restaurant/', 'alt' => 'Утварь для ресторанов'],
+  ['img' => 'slide_3.jpg', 'link' => '/catalog', 'alt' => 'Изготовление мебели на заказ'],
+  ['img' => 'slide_4.jpg', 'link' => '/catalog/stools/', 'alt' => 'Изготовление табуреток'],
+  ['img' => 'slide_5.jpg', 'link' => 'catalog/tables/products?sub=2', 'alt' => 'Изделия с эпоксидной смолой']
+]
 ?>
 <!-- Slider -->
 <section class="slider">
   <div style="flex:1;">
-    <div class="row m-0">
-      <div id="carouselExampleAutoplaying" class="carousel slide p-0" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-indicators">
-          <? foreach ($slider_data as $key => $item) { ?>
-            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="<?= $key ?>" aria-label="Слайд <?= $key ?>" class="<? if ($key == 0) echo 'active' ?>" aria-current="<?= $key == 0 ?>"></button>
-          <? } ?>
-        </div>
-        <div class="carousel-inner" role="listbox">
+    <div class="slider-inner">
+      <div class="row m-0">
+        <div id="carouselExampleAutoplaying" class="carousel slide p-0" data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-indicators">
+            <? foreach ($slider_data as $key => $item) { ?>
+              <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="<?= $key ?>" aria-label="Слайд <?= $key ?>" class="<? if ($key == 0) echo 'active' ?>" aria-current="<?= $key == 0 ?>"></button>
+            <? } ?>
+          </div>
+          <div class="carousel-inner" role="listbox">
 
-          <? foreach ($slider_data as $key => $item) {
-          ?>
-            <div class="carousel-item <? if ($key == 0) echo 'active' ?>">
-              <div class="card" style="border: none;">
-                <div class="card-img">
-                  <img src="/assets/images/slider_min/<?= $item ?>" class="img-fluid" alt="<?= $item ?>" style="width: 100%; max-height: 70vh;">
+            <? foreach ($slider_data as $key => $item) {
+            ?>
+              <div class="carousel-item <? if ($key == 0) echo 'active' ?>">
+                <div class="card" style="border: none;">
+                  <a class="card-img" href="<?= $item['link'] ?>">
+                    <img src="/assets/images/slider_min/<?= $item['img'] ?>" class="img-fluid" alt="<?= $item['img'] ?>" style="width: 100%; max-height: 70vh;">
+                  </a>
                 </div>
               </div>
-            </div>
-          <? } ?>
+            <? } ?>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+          </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Предыдущий</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Следующий</span>
-        </button>
       </div>
     </div>
   </div>
